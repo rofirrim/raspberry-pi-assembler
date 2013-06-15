@@ -1,0 +1,7 @@
+
+ Performance counter stats for './collatz03' (25 runs):
+
+          4,179080 task-clock                #    0,766 CPUs utilized            ( +-  0,36% )
+
+       0,005459041 seconds time elapsed                                          ( +-  0,55% )
+
