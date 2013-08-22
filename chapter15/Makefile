@@ -1,4 +1,4 @@
-EXES=divideby14 division longdiv
+EXES=divideby14 division benchmark
 OBJS=$(addsuffix .o, $(EXES))
 all: $(EXES) $(OBJS)
 
