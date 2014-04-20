@@ -34,7 +34,7 @@ naive_matmul_4x4:
       str r6, [r4], +#4   /* *r4 ← r6 then r4 ← r4 + 4 */
     .L0_loop_init_test:
       subs r5, r5, #1
-      bne .L0_loop_init
+      bge .L0_loop_init
 
     /* We will use 
            r4 as i
@@ -116,7 +116,7 @@ naive_vectorial_matmul_4x4:
       str r6, [r4], +#4   /* *r4 ← r6 then r4 ← r4 + 4 */
     .L1_loop_init_test:
       subs r5, r5, #1
-      bne .L1_loop_init
+      bge .L1_loop_init
 
     /* Set the LEN field of FPSCR to be 4 (value 3) */
     mov r5, #0b011                        /* r5 ← 3 */
@@ -204,7 +204,7 @@ naive_vectorial_matmul_2_4x4:
       str r6, [r4], +#4   /* *r4 ← r6 then r4 ← r4 + 4 */
     .L2_loop_init_test:
       subs r5, r5, #1
-      bne .L2_loop_init
+      bge .L2_loop_init
 
     /* Set the LEN field of FPSCR to be 4 (value 3) */
     mov r5, #0b011                        /* r5 ← 3 */
@@ -308,7 +308,7 @@ better_vectorial_matmul_4x4:
       str r6, [r4], +#4   /* *r4 ← r6 then r4 ← r4 + 4 */
     .L3_loop_init_test:
       subs r5, r5, #1
-      bne .L3_loop_init
+      bge .L3_loop_init
 
     /* Set the LEN field of FPSCR to be 4 (value 3) */
     mov r5, #0b011                        /* r5 ← 3 */
@@ -386,7 +386,7 @@ best_vectorial_matmul_4x4:
       str r6, [r4], +#4   /* *r4 ← r6 then r4 ← r4 + 4 */
     .L4_loop_init_test:
       subs r5, r5, #1
-      bne .L4_loop_init
+      bge .L4_loop_init
 
     /* Set the LEN field of FPSCR to be 4 (value 3) */
     mov r5, #0b011                        /* r5 ← 3 */
@@ -462,7 +462,7 @@ main:
     .Lmain_loop_test: 
       bl best_vectorial_matmul_4x4
       subs r4, r4, #1
-      bne .Lmain_loop_test
+      bge .Lmain_loop_test
 
     mov r0, #0
     pop {r4, r5, r6, lr}
