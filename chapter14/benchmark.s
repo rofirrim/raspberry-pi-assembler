@@ -462,7 +462,7 @@ main:
     .Lmain_loop_test: 
       bl best_vectorial_matmul_4x4
       subs r4, r4, #1
-      bge .Lmain_loop_test
+      bne .Lmain_loop_test /* Should have been 'bge' */
 
     mov r0, #0
     pop {r4, r5, r6, lr}
