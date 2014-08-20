@@ -50,10 +50,10 @@ main:
                                 we keep r4 to keep the stack 8-byte
                                 aligned, as per AAPCS requirements */
 
-    ldr r0, addr_say_hello   /* r0 ← &addr_ptr_of_fun */
+    ldr r0, addr_say_hello   /* r0 ← &say_hello */
     bl greeter               /* call greeter */
 
-    ldr r0, addr_say_bonjour /* r0 ← &addr_ptr_of_fun */
+    ldr r0, addr_say_bonjour /* r0 ← &say_bonjour */
     bl greeter               /* call greeter */
 
     mov r0, #0               /* return from the program, set error code */
