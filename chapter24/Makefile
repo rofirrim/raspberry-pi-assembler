@@ -1,4 +1,4 @@
-EXES=print-array sort-array global-count-comparisons closure-count-comparisons
+EXES=print-array sort-array trampoline-sort-array
 OBJS=$(addsuffix .o, $(EXES))
 all: $(EXES) $(OBJS)
 
