@@ -37,17 +37,17 @@ better_channel_mixing:
           so it holds that 0 ≤ r4 < r3 */
 
     mov r4, #0              /* r4 ← 0 */
-    b .Lcheck_loop          /* branch to check_loop */
-    .Lloop:
+    b .Lcheck_loop1          /* branch to check_loop */
+    .Lloop1:
       ldr r6, [r0, r4]      /* r6 ← *(r0 + r4) */
       ldr r7, [r1, r4]      /* r7 ← *(r1 + r4) */
       shadd16 r8, r6, r7    /* r8[15:0] ← (r6[15:0] + r7[15:0]) >> 1*/
                             /* r8[31:16] ← (r6[31:16] + r7[31:16]) >> 1*/
       str r8, [r2, r4]      /* *(r2 + r4) ← r8 */
       add r4, r4, #2        /* r4 ← r4 + 2 */
-    .Lcheck_loop:
+    .Lcheck_loop1:
       cmp r4, r3            /* compute r4 - r3 and update cpsr */
-      blt .Lloop            /* if r4 < r3 jump to the
+      blt .Lloop1            /* if r4 < r3 jump to the
                                beginning of the loop */
 
 .global main

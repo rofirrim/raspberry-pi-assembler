@@ -1,4 +1,4 @@
-EXES=motivation byte_array_add
+EXES=motivation byte_array_add clipped_add
 OBJS=$(addsuffix .o, $(EXES))
 all: $(EXES) $(OBJS)
 
