@@ -69,7 +69,6 @@ print_each_item:
       mov r2, r5      /* third parameter: item value */
       bl printf       /* call printf */
 
-      str r5, [r7, r4, LSL #2]   /* *(r7 + r4 * 4) ← r5 */
       add r4, r4, #1             /* r4 ← r4 + 1 */
     .Lcheck_loop_print_items:
       cmp r4, r6                 /* r4 - r6 and update cpsr */
