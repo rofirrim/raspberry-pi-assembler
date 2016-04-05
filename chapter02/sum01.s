@@ -1,6 +1,5 @@
 /* -- sum01.s */
 .global main
-.func main
 
 main:
     mov r1, #3
